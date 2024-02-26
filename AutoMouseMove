@@ -1,0 +1,33 @@
+# AutoMouseMove
+# An example Python script using PyAutoGUI to simulate random mouse movements.
+# Press the 'ESC' key to stop the program.
+
+# Import necessary libraries
+import pyautogui as pag
+import random
+import keyboard
+
+# Variable to control the main loop
+stop_program = False
+
+# Function to handle keyboard events
+def on_key_event(e):
+    global stop_program
+    # Check if the key pressed is 'ESC' and handle the KEY_DOWN event
+    if e.event_type == keyboard.KEY_DOWN and e.name == 'esc':
+        stop_program = True
+
+# Hook the keyboard event handler
+keyboard.hook(on_key_event)
+
+# Main loop to simulate random mouse movements
+while not stop_program:
+    # Generate random coordinates within a specified range
+    x = random.randint(600, 700)
+    y = random.randint(200, 600)
+    
+    # Move the mouse to the generated coordinates with a delay of 0.4 seconds
+    pag.moveTo(x, y, 0.4)
+
+# Display a message when the program is stopped
+print("Program stopped due to 'ESC' key press.")

@@ -3,7 +3,7 @@
 # Press the 'ESC' key to stop the program.
 
 # Import necessary libraries
-import pyautogui as pag
+import pyautogui as ptg
 import random
 import keyboard
 
@@ -27,7 +27,7 @@ while not stop_program:
     y = random.randint(200, 600)
     
     # Move the mouse to the generated coordinates with a delay of 0.4 seconds
-    pag.moveTo(x, y, 0.4)
+    ptg.moveTo(x, y, 0.4)
 
 # Display a message when the program is stopped
 print("Program stopped due to 'ESC' key press.")
